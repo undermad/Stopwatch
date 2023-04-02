@@ -110,6 +110,7 @@ code {
     transition: all 0.1s linear;
     box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.1);
 }
+
 .clock-btn:hover {
     border-color: #FE702B;
     color: #FE702B;
@@ -120,6 +121,7 @@ code {
     box-shadow: 1px 1px 6px 2px rgba(255, 255, 255, 0.1);
     transition: all 0.1s linear;
 }
+
 .clock-btn:active {
     background-color: #212121;
     border-color: #b24e1e;
@@ -127,11 +129,55 @@ code {
     transform: translateY(1px);
     box-shadow: 0px 0px 4px 4px rgba(109, 109, 109, 0.1);
 }
+
 .running {
     border: 1px solid #b5582b;
     background-color: #2a2a2a;
-    color: #af562c;
+    color: #f4621c;
     transition: all 0.1s linear;
 }
+
+.random-dog-generator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.random-dog-img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.generate-random-dog-btn {
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid #2F2F2F;
+    border-radius: 5px;
+}
+
+.dog-img-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.spinner {
+    height: 36px;
+    align-self: center;
+    width: 36px;
+    border: 6px solid;
+    border-color: #f4621c transparent #2F2F2F transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
 
 
