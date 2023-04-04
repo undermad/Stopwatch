@@ -1,14 +1,17 @@
 import Stopwatch from "./component/Stopwatch";
 import FetchDataF from "./component/FetchDataF";
 import MatchCardGame from "./component/MatchCardGame";
+import SudokuGame from "./component/SudokuGame";
 
 function App() {
     return (
         <div >
-            {/*<FetchDataF />*/}
-            {/*<Stopwatch />*/}
+            <SudokuGame />
+            <FetchDataF />
+            <Stopwatch />
             <MatchCardGame/>
         </div>
+
     );
 }
 

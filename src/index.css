@@ -189,6 +189,7 @@ code {
     border: 1px solid black;
     justify-content: center;
 }
+
 img {
     padding: 5px;
     max-width: 100%;
@@ -196,7 +197,61 @@ img {
     display: block;
 }
 
+.grid9x9 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px;
+    width: 702px;
+    border: 2px solid black;
+}
 
+.sudoku-element {
+    width: 78px;
+    height: 78px;
+    border: 1px solid black;
+    font-size: 10px;
+}
+.editable-sudoku-element {
+    color: #FE702B;
+}
+
+.sudoku-element:hover {
+    cursor: pointer;
+}
+
+.sudoku-input {
+    outline: none;
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+}
+.sudoku-value-container {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 
 
