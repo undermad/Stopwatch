@@ -7,9 +7,9 @@ function App() {
     return (
         <div >
             <SudokuGame />
-            <FetchDataF />
-            <Stopwatch />
-            <MatchCardGame/>
+            {/*<FetchDataF />*/}
+            {/*<Stopwatch />*/}
+            {/*<MatchCardGame/>*/}
         </div>
 
     );

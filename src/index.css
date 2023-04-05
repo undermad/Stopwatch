@@ -212,7 +212,17 @@ img {
     border: 1px solid black;
     font-size: 10px;
     padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.sudoku-element:hover .sudoku-value-container {
+    color: #f9f9f9;
+    border: 1px solid #732020;
+    background-color: #393939;
+}
+
 .sudoku-element-wrap {
     position: relative;
 }
@@ -242,42 +252,77 @@ img {
     position: absolute;
     width: 18px;
     height: 18px;
-    border: 3px solid yellow;
+    font-size: 10px;
 }
 
 
 .sudoku-value-container {
+    color: #c8c8c8;
     font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 0.15s linear;
+}
+.sudoku-uneditable-value-container {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: auto;
 }
 
+
 .sudoku-possible-values {
+    color: #ba1d24;
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    text-align: center;
+    /*color: #4981ee;*/
+    border: 1px solid transparent;
+    transition: all 0.15s linear;
+    border-radius: 5px;
+}
+
+.sudoku-possible-values:hover {
+    color: #e21d25;
     position: absolute;
     width: 18px;
     height: 18px;
     font-size: 10px;
     text-align: center;
-    color: #4981ee;
+    border: 1px solid #732020;
+    background-color: #393939;
+    cursor: pointer;
 }
+
 .s1 {
-    top: 0;
-    left: 0;
+    top: 2px;
+    left: 2px;
 }
+
 .s2 {
-    top: 0;
-    right: 0;
+    top: 2px;
+    right: 2px;
 }
+
 .s3 {
-    left: 0;
-    bottom: 0;
+    left: 2px;
+    bottom: 2px;
 }
+
 .s4 {
-    right: 0;
-    bottom: 0;
+    right: 2px;
+    bottom: 2px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -289,6 +334,11 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+.sudoku-hidden {
+    display: none;
+
 }
 
 

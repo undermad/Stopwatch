@@ -19,11 +19,6 @@ function SudokuElement(props) {
     const [editing3, setEditing3] = useState(false);
     const [editing4, setEditing4] = useState(false);
 
-    function editingStart(e) {
-        if (editable) {
-            setEditing(true);
-        }
-    }
 
     function editingEnd(e) {
         setValue(e.target.value);
@@ -45,7 +40,7 @@ function SudokuElement(props) {
                                className={"sudoku-input absolute-input s1"}/>
 
                 : <div onClick={() => setEditing1(true)}
-                       className={"sudoku-possible-values s1"}>{value1}</div>}
+                       className={editable ? "sudoku-possible-values s1": "hidden"}>{value1}</div>}
 
             {editing2 ? <input type={"number"}
                                autoFocus={true}
@@ -57,7 +52,7 @@ function SudokuElement(props) {
                                className={"sudoku-input absolute-input s2"}/>
 
                 : <div onClick={() => setEditing2(true)}
-                       className={"sudoku-possible-values s2"}>{value2}</div>}
+                       className={editable ? "sudoku-possible-values s2": "hidden"}>{value2}</div>}
 
             {editing3 ? <input type={"number"}
                                autoFocus={true}
@@ -68,7 +63,7 @@ function SudokuElement(props) {
                                }}
                                className={"sudoku-input absolute-input s3"}
             /> : <div onClick={() => setEditing3(true)}
-                      className={"sudoku-possible-values s3"}>{value3}</div>}
+                      className={editable ? "sudoku-possible-values s3": "hidden"}>{value3}</div>}
 
             {editing4 ? <input type={"number"}
                                autoFocus={true}
@@ -79,16 +74,20 @@ function SudokuElement(props) {
                                }}
                                className={"sudoku-input absolute-input s4"}
             /> : <div onClick={() => setEditing4(true)}
-                      className={"sudoku-possible-values s4"}>{value4}</div>}
+                      className={editable ? "sudoku-possible-values s4": "hidden"}>{value4}</div>}
 
-            <div onClick={editingStart}
+            <div onClick={() => {
+                if (editable) {
+                    setEditing(true);
+                }
+            }}
                  className={editable ? "sudoku-element" : "sudoku-element editable-sudoku-element"}>
                 {editing ? <input type={"number"}
                                   autoFocus={true}
                                   onBlur={e => setEditing(false)}
                                   onInput={editingEnd}
                                   className={"sudoku-input"}/>
-                    : <SudokuElementValue value={value}/>}
+                    : <SudokuElementValue editable={editable} value={value}/>}
 
             </div>
         </div>
